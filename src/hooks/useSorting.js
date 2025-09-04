@@ -1,10 +1,7 @@
 import { useState, useMemo } from 'react';
-import { Blog } from '@/data/blogs';
 
-export type SortOption = 'newest' | 'oldest' | 'title';
-
-export const useSorting = (blogs: Blog[]) => {
-  const [sortBy, setSortBy] = useState<SortOption>('newest');
+export const useSorting = (blogs) => {
+  const [sortBy, setSortBy] = useState('newest');
 
   const sortedBlogs = useMemo(() => {
     const sorted = [...blogs];

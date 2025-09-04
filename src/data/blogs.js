@@ -1,18 +1,6 @@
-export interface Blog {
-  id: string;
-  title: string;
-  slug: string;
-  image: string;
-  shortDescription: string;
-  content: string;
-  category: 'Tech' | 'Lifestyle' | 'Travel' | 'Food' | 'Fashion';
-  date: string;
-  author: string;
-  readTime: number;
-  tags: string[];
-}
+// Blog data structure - no TypeScript interfaces needed
 
-export const mockBlogs: Blog[] = [
+export const mockBlogs = [
   {
     id: '1',
     title: 'The Future of Web Development',
@@ -93,9 +81,9 @@ export const mockBlogs: Blog[] = [
   }
 ];
 
-export const categories = ['All', 'Tech', 'Lifestyle', 'Travel', 'Food', 'Fashion'] as const;
+export const categories = ['All', 'Tech', 'Lifestyle', 'Travel', 'Food', 'Fashion'];
 
-export const generateSlug = (title: string): string => {
+export const generateSlug = (title) => {
   return title
     .toLowerCase()
     .replace(/[^\w\s]/gi, '')

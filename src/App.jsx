@@ -1,4 +1,4 @@
-import { MantineProvider, createTheme, ColorSchemeScript } from "@mantine/core";
+import { MantineProvider, createTheme } from "@mantine/core";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
@@ -22,8 +22,7 @@ const theme = createTheme({
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ColorSchemeScript defaultColorScheme="auto" />
-    <MantineProvider theme={theme} defaultColorScheme="auto">
+    <MantineProvider theme={theme}>
       <Toaster />
       <Sonner />
       <BrowserRouter>

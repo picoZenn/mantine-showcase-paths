@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Blog, mockBlogs } from '@/data/blogs';
+import { mockBlogs } from '@/data/blogs';
 
 export const useBlogs = () => {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     // Simulate API call
@@ -25,7 +25,7 @@ export const useBlogs = () => {
     fetchBlogs();
   }, []);
 
-  const getBlogBySlug = (slug: string): Blog | undefined => {
+  const getBlogBySlug = (slug) => {
     return blogs.find(blog => blog.slug === slug);
   };
 

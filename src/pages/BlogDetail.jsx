@@ -28,11 +28,11 @@ import { useBlogs } from '@/hooks/useBlogs';
 import { useState, useEffect } from 'react';
 
 const BlogDetail = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug } = useParams();
   const navigate = useNavigate();
   const { getBlogBySlug, loading } = useBlogs();
   const [isLiked, setIsLiked] = useState(false);
-  const [blog, setBlog] = useState(getBlogBySlug(slug!));
+  const [blog, setBlog] = useState(getBlogBySlug(slug));
 
   useEffect(() => {
     if (slug) {

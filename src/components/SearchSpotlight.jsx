@@ -3,12 +3,7 @@ import { IconSearch, IconHome, IconDashboard, IconFileText } from '@tabler/icons
 import { useNavigate } from 'react-router-dom';
 import { mockBlogs } from '@/data/blogs';
 
-interface SearchSpotlightProps {
-  opened: boolean;
-  close: () => void;
-}
-
-const SearchSpotlight = ({ opened, close }: SearchSpotlightProps) => {
+const SearchSpotlight = ({ opened, close }) => {
   const navigate = useNavigate();
 
   const actions = [

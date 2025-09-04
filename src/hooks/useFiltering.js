@@ -1,8 +1,7 @@
 import { useState, useMemo } from 'react';
-import { Blog } from '@/data/blogs';
 
-export const useFiltering = (blogs: Blog[]) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+export const useFiltering = (blogs) => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredBlogs = useMemo(() => {
