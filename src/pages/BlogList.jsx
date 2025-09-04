@@ -56,9 +56,9 @@ const BlogList = () => {
     itemsPerPage: ITEMS_PER_PAGE,
   });
   
-  const [likedBlogs, setLikedBlogs] = useState<Set<string>>(new Set());
+  const [likedBlogs, setLikedBlogs] = useState(new Set());
 
-  const handleLike = (blogId: string) => {
+  const handleLike = (blogId) => {
     setLikedBlogs(prev => {
       const newLiked = new Set(prev);
       if (newLiked.has(blogId)) {
@@ -129,7 +129,7 @@ const BlogList = () => {
             <Select
               placeholder="Sort by"
               value={sortBy}
-              onChange={(value) => setSortBy(value as any)}
+              onChange={(value) => setSortBy(value)}
               data={[
                 { value: 'newest', label: 'Newest First' },
                 { value: 'oldest', label: 'Oldest First' },
